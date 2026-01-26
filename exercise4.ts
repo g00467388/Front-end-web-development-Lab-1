@@ -9,7 +9,7 @@ function GetLengthWithoutSpace(str :string) :number
     return str.trim().length;
 }
 // return length based off of boolean CountSpaces parameter
-function GetLengthWithOrWithoutSpace(str :string, CountSpaces :boolean) :number
+function GetLengthWithOrWithoutSpace(str :string, CountSpaces? :boolean) :number
 {
     return CountSpaces ? GetLength(str) : GetLengthWithoutSpace(str)
 }
