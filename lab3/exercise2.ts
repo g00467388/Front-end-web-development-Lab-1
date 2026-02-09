@@ -1,6 +1,6 @@
 interface ITask {
 
- addTask2(task :string) : number;
+ addTask(task :string) : number;
  listAllTasks() : void;
  removeTask(task :string) : number;
 
@@ -8,23 +8,29 @@ interface ITask {
 }
 class Task implements ITask 
 {
-  addTask2(task :string) : number {
-
-    array.push(task)
+    array : Array<string> = [];
+    addTask(task :string) : number {
+    this.array.push(task)
     console.log("Added " + task)
-    return array.length;
+    return this.array.length;
 }
  listAllTasks() : void {
-    if (array.length == 0)
+    if (this.array.length == 0)
         console.log("array is empty!")
     else
-        array.forEach(x => console.log(x))
+        this.array.forEach(x => console.log(x))
 }
 
  removeTask(task :string) : number {
-    let index = array.indexOf(task)
-    array.splice(index, 1);
-    return array.length;
+    let index = this.array.indexOf(task)
+    this.array.splice(index, 1);
+    return this.array.length;
 }
     
 }
+
+let x = new Task(); 
+x.addTask("new");
+x.listAllTasks();
+x.removeTask("new")
+x.listAllTasks();
