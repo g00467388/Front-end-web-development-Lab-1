@@ -1,0 +1,6 @@
+<!-- Loop through presidents array and display as unordered list -->
+@for (president of presidents; track $index) {
+    <ul>
+        <li>{{president.name}} {{president.term}}</li>
+    </ul>
+}
