@@ -1,0 +1,15 @@
+<h1>Student app</h1>
+<!-- Loop through array of students and print attributes -->
+@for (student of students; track $index) {
+  <ul>
+    <li>name: {{student.name}}</li>
+    <li>age: {{student.age}}</li>
+    <li>id: {{student.id}}</li>
+    <li>address: {{student.address}}</li>
+    <li>course: {{student.course}}</li> 
+  </ul>
+}
+<!-- Weather only has one element -->
+<h1>Weather in Galway</h1>
+<p>{{weather[0].main}}, {{weather[0].description}} </p>
+<router-outlet />
